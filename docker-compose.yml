@@ -1,9 +1,12 @@
 version: '2'
-
 services: 
-  web-server:
-    image: httpd
+  app:
+    image: npm-react
+    build: .
     ports: 
-      - '80:80'
+      - 3000:3000
+    environment: 
+      CHOKIDAR_USEPOLLING: 'true'
     volumes: 
-      - ./repo:/usr/local/apache2/htdocs/
+      - ./:/home/node/app
+      - /home/node/app/node_modules
