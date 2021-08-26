@@ -9,4 +9,6 @@ services:
       CHOKIDAR_USEPOLLING: "true"
     volumes:
       - ./:/home/node/app
-      - /home/node/app/node_modules
+      - react-modules:/home/node/app/node_modules
+volumes: 
+  react-modules:
